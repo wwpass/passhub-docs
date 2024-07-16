@@ -7,7 +7,7 @@ sidebar_position: 50
 
 As opposed to annoying password manager extensions, the PassHub extension is a non-intrusive tool to fill username/password fields in login forms and bank card data on payment pages.
 
-By no means is the PassHub extension a silver bullet, but rather a semi-manual assistant that shows a choice of the appropriate accounts and fills usernames and passwords into login forms on websites. Automatic form filling is more about guessing, not about well-defined algorithms. Generally, the PassHub extension works on approximately 80% of sites. For other cases, use the basic Copy/Paste technique of PassHub.net itself.
+By no means is the PassHub extension a silver bullet, but rather a semi-manual assistant that shows a choice of the appropriate accounts and fills usernames and passwords into login forms on websites. Automatic form filling is more about guessing, not about well-defined algorithms. Generally, the PassHub extension works on approximately 80% of sites. For other cases, use the basic Copy/Paste functionality within PassHub.net itself.
 
 
 ## Installation
@@ -17,24 +17,24 @@ By no means is the PassHub extension a silver bullet, but rather a semi-manual a
 
 On a desktop Chrome, Microsoft Edge, Opera, Vivaldi, Brave, and other Chromium-based browsers follow this link: https://chrome.google.com/webstore/detail/passhub/bamjbfhfacpdkenilcibkmpdahkgfejh
 
-Alternatively, go to [Chrome Web Store](https://chrome.google.com/webstore/category/extensions) and find the PassHub.net extension. Click **Add to Chrome**.
+Alternatively, go to the [Chrome Web Store](https://chrome.google.com/webstore/category/extensions) and find the PassHub.net extension. Click **Add to Chrome**.
 
-NOTE. For Chrome browser only: pin the PassHub extension icon to the Chrome Toolbar. Click the puzzle piece-shaped Extensions icon next to the account icon and then click the pushpin next to the PassHub extension.
+NOTE: In the Chrome browser, you can pin the PassHub extension icon to the toolbar. To do so, click on the puzzle piece-shaped Extensions icon next to the account icon and then click the pushpin next to the PassHub extension.
 
 ![Chrome pin extension](/img/ChromePinExtension.png)
 
-See below [How to use instructions](#how-to-use)
+Jump to the section [how to use the extension](#how-to-use) below.
 
 
 ### Safari Browser on Mac
 
 To get the Safari extension, go to the Mac App Store https://apps.apple.com/ch/app/passhub-net/id6478985505?l=en-GB&mt=12 and install the app as usual. 
 
-Next go to Safari menu and choose Safari > Settings (or Preferences).
+Next go to the Safari menu and navigate to Safari > Settings (or Preferences).
 
 Click Extensions.
 
-Select the checkbox next to the extension's name (see https://support.apple.com/en-us/102343) . 
+Select the checkbox next to the extension's name (see https://support.apple.com/en-us/102343). 
 
 ![Safari enable extension](/img/safari_enable_extension.jpg)
 
@@ -45,11 +45,11 @@ The PassHub icon appears to the left of the page address. When Safari asks for t
 
 ## How To Use
 
-The extension works in the presence of PassHub.net tab. The browser extension communicates with the PassHub tab to find the appropriate credentials. So be sure you are signed in to PassHub to use the extension.
+The extension works in the presence of an open PassHub.net tab. The browser extension communicates with the PassHub tab to find the appropriate credentials. You must be signed in to PassHub to use the extension.
 
 #### 1. Autofill Login Form
 
-Open the Login page of the website you want to sign in. Click the PassHub Logo in the upper right corner. The extension consults the PassHub browser tab if appropriate accounts are stored for the current page URL. There may be more than one suitable account. All will be shown in the extension pop-up.
+Open the Login page of the website you want to sign in. Click the PassHub Logo in the upper right corner. The extension consults the PassHub browser tab if appropriate accounts are stored for the current page URL. There may be more than one suitable account. All will be shown in the extension's pop-up.
 
 Choose the desired account. When the login form is filled in, click the "Sign in" button on the form.
 
@@ -63,7 +63,7 @@ You may click the website URL directly on the PassHub page or in the password re
 
 ![PassHub Alternative way](/img/UseExtension1.png)
 
-site tab opens and the login form is automatically filled in
+The selected site tab then opens and the login form is automatically filled in.
 
 ![PassHub alternative login](/img/ExtensionAlternativeMethod2.png)
 
@@ -71,19 +71,19 @@ site tab opens and the login form is automatically filled in
 
 #### 3. Payment Card Autofill
 
-When the extension icon is clicked on a page with a payment card form, the extension detects specific field names and shows a list of stored cards. Just select the desired card to auto fill its data.
+When the extension icon is clicked on a page with a payment card form, the extension detects specific field names and shows a list of stored cards. Just select the desired card to autofill its data.
 
 ![Card autofill](/img/card-autofill.png)
 
 ## Firefox
 
-Due to the difference in browser architecture, Firefox and Chrome/Safari extensions are different too. Particularly, The Firefox extension is more self-contained: you need to log in directly to the extension.
+Due to the difference in browser architecture, the Firefox and Chrome/Safari extensions are different too. Particularly, The Firefox extension is more self-contained: you need to log in directly to the extension.
 
 ### Installation
 
 On your desktop Firefox, open the link https://addons.mozilla.org/en-US/firefox/addon/passhub-net/.
 
-Click the "Add to Firefox" button
+Click the "Add to Firefox" button.
 
 ![Add Extension Page](/img/firefox-add-extension.png)
 
@@ -99,11 +99,11 @@ Now the PassHub icon appears in the upper right corner. It is safe to run the ex
 
 As opposed to the Chrome extension, the Firefox extension can only work with only one predefined PassHub server. To use the extension with your own PassHub instance, do the following:
 
-- right-click on the extension icon and select the 'Manage Extension' item
+- Right-click on the extension icon and select the 'Manage Extension' item.
 
 ![Manage extension](/img/manage-extension.png)
 
-- select the 'Options' tab, enter the URL (or just a hostname) of the server and click the 'Change' button
+- Select the 'Options' tab, enter the URL (or just a hostname) of the server and click the 'Change' button.
 
 ![Manage extension](/img/extension-dialog.png)
 
@@ -123,4 +123,4 @@ The extension fills in the login form with the selected credentials. You only ha
 
 ![Form filled](/img/firefox-extension-form-filled.png)
 
-As to payment card autofill, the Firefox extension and Chrome extension behave the same way; see [Payment Card autofill](/doc/browser-extension#3-payment-card-autofill) above.
+As for payment card autofill, the Firefox extension and Chrome extension behave the same way; see the [Payment Card autofill](/doc/browser-extension#3-payment-card-autofill) section above.
