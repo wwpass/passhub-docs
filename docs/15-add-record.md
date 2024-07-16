@@ -48,7 +48,7 @@ When finished, click the Upload button.
 
 :::note Upload multiple files
 
-You can upload multiple files at once: just what you need in the **Browse** dialog, or Drag and Drop them on desktop.
+You can upload multiple files at once: just what you need in the **Browse** dialog, or Drag-and-Drop them on desktop.
 
 :::
 
