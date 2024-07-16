@@ -27,7 +27,9 @@ When finished, click the **Share Safe** button.
 
 Note the icon changes for the shared safe. Next time the recipient logs into PassHub, the shared safe will be shown.
 
-:::note 
+:::note Separate Names for the Same Safe
+
 The safe name may be different for each user.
 For example, if Alice shares a safe with Bob, it would be natural to have the safe named 'Bob' or alike, while Bob may want to call the safe "Alice." So Bob can change the name of the safe in _his_ account, and the safe will still be named "Bob" in Alice's account.
+
 :::
