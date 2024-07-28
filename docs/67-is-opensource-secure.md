@@ -9,13 +9,13 @@ PassHub.net is an open-source project. This means the PassHub source code is pub
 
 ## Transparency as a Security Feature 
 
-PassHub.net, a password manager, stores and secures users’ login credentials, Google Authenticator codes, bank cards, document scans, and other extremely sensitive information. The first and most important question is: Why should someone trust PassHub.net?
+PassHub.net, a password manager, stores and secures users’ login credentials, Google Authenticator codes, bank cards, document scans, and other extremely sensitive information. The first and most important question is: why should someone trust PassHub.net?
 
 Computer security practice provides a surprising answer: “Be open; show your code internals.” By making our code visible to the world, we invite peer review and collaboration, turning potential vulnerabilities into opportunities for strengthening our defenses. That is the ultimate response to “How can we trust you?”
 
 ## The Paradox of Closed-Source Security
 
-Consider the opposite example: One of the top-10 password managers with closed code allows users to share password records with others before these peers have created an account. This looks suspicious and hardly aligns with the declared feature of “client-side encryption.” Such claims raise questions about how the encryption keys are managed and shared securely and if we can’t trust them to show us how they are doing this, how can we trust anything else they claim to do? 
+Consider the opposite example: One of the top-10 password managers with closed code allows users to share password records with others before these peers have created an account. This looks suspicious and hardly aligns with the declared feature of “client-side encryption.” Such claims raise questions about how the encryption keys are managed and shared securely, and if we can’t trust them to show us how they are doing this, how can we trust anything else they claim to do? 
 
 In a world where threats are omnipresent, trust must be earned. Hiding the ball is a bad place to start. 
 
@@ -35,6 +35,6 @@ While we advocate for the security benefits of open-source, we acknowledge that 
 
 In conclusion, PassHub.net’s open-source nature is not just a feature; it's a fundamental aspect of our strategy. By embracing transparency, encouraging collaboration, and learning from the broader open-source community. Through these practices, we build a more secure environment for our users.
 
-## Summary: 
+## Summary
 
-Discover how PassHub.net addresses security concerns by embracing transparency and collaboration. Learn why showing the code internals enhances trust and security, contrasting with the pitfalls of closed-source systems. How open-source practices, peer review, and the use of widely-accepted cryptographic algorithms contribute to robust security. Plus, get insights into the broader open-source ecosystem's role in ensuring reliability and mitigating risks like backdoors
+Discover how PassHub.net addresses security concerns by embracing transparency and collaboration. Learn why showing the code internals enhances trust and security, contrasting with the pitfalls of closed-source systems. How open-source practices, peer review, and the use of widely-accepted cryptographic algorithms contribute to robust security. Plus, get insights into the broader open-source ecosystem's role in ensuring reliability and mitigating risks like backdoors.

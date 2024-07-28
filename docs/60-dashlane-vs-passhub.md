@@ -75,7 +75,7 @@ A user can add a second factor – TOTP (Google Authenticator, for example) and/
 
 :::note PassHub.net
 
-PassHub.net multifactor authentication, based on WWPass technology, is not a premium feature, but the point where the very security starts. As a part of the strong authentication process, the WWPass Key provides a cipher key for client-side encryption. The key has true 256-bit entropy, not known to the user, and cannot be derived from any master password or similar credentials.
+PassHub.net's multifactor authentication, based on WWPass technology, is not a premium feature. It's the very point where security starts. As a part of the strong authentication process, the WWPass Key provides a cipher key for client-side encryption. The key has true 256-bit entropy, not known to the user, and cannot be derived from any master password or similar credentials.
 
 WWPass authentication is fully anonymous for both the WWPass network and PassHub.net web servers. The client-side encryption key is also not known to WWPass or PassHub.net servers. Being fundamental to the PassHub.net architecture, the WWPass strong multifactor authentication is included both in free and premium plans.
 
@@ -87,9 +87,9 @@ Dashlane has some security and privacy pitfalls. Here are three of them.
 
 1. When a password record is shared with a user with limited rights, the password itself is shown as a string of stars and is not visible to the recipient. The "Show Password" control is disabled. However, a curious user with a little knowledge of web technology may reveal the password in a short time.
 
-2. While the password records are client-side encrypted and their content is not known to Dashlane, the URL of the website is sent to Dashlane servers unencrypted. We can assume that reason is to obtain a logo of the site. That means Dashlane knows the addresses of all the sites you store in your account.
+2. While the password records are client-side encrypted and their content is not known to Dashlane, the URL of the website is sent to Dashlane servers unencrypted. We can assume that the reason is to obtain a logo of the site. That means Dashlane knows the addresses of all the sites you store in your account.
 
-3. Using an email as a username, while widely used, is an additional attribute that can be used to link your accounts in independent websites and services.
+3. Using an email as a username, while widely used, is an additional attribute that can be used to link your accounts to independent websites and services.
 
 :::note PassHub.net
 
@@ -99,16 +99,16 @@ PassHub.net does not show website favicons because the way they are obtained may
 
 ### Import and Export
 
-Dashlane has its own proprietary backup format (DASH). For all the other purposes CSV files are used.
+Dashlane has its own proprietary backup format (DASH). For all other purposes, CSV files are used.
 
 ### Dashlane to PassHub.net Migration
 
-At the date of writing, it is only possible to migrate Password records
+At the date of writing, it is only possible to migrate Password records.
 
 **Dashlane:**
 
-Go to Settings (My account), select the “Export data” item. Click “Export to CSV” button. Dashlane creates and stores a ZIP file with different types of records packed into separate CVS files. Unzip the archive to get the _credentials.csv_ file.
+Go to Settings (My account), select the “Export data” item. Click the “Export to CSV” button. Dashlane creates and stores a ZIP file with different types of records packed into separate CVS files. Unzip the archive to get the _credentials.csv_ file.
 
 **PassHub:**
 
-Go to Account, Import, select "Import into a new safe". Drag and drop (or use Browse button) the _credentials.csv_ file. Click "Import" button.
+Go to Account, Import, select "Import into a new safe". Drag and drop (or use Browse button) the _credentials.csv_ file. Click the "Import" button.

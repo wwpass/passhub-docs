@@ -9,14 +9,14 @@ sidebar_position: 70
 
 PassHub is an open-source project with the code available on GitHub. See https://github.com/wwpass/passhub for the backend and https://github.com/wwpass/passhub-frontend for the frontend.
 
-You can deploy an instance of PassHub on your company servers, either VPS or a hardware located in a data center. This way you have full control of your data.
+You can deploy an instance of PassHub on your company servers, either via VPS or hardware located in a data center. This way you have full control of your data.
 
-Follow the [installation instruction](https://github.com/wwpass/passhub/blob/master/InstallingPassHubOnUbuntu20.04.md) for Ubuntu servers.
-The PassHub architecture allows to fit the service on a single host or on three hosts with replicated database and a few web servers. It is possible to bind the PassHub to the company's Active Directory for uniform user rights control. Alternatively, you may use the built-in user control feature of PassHub for Business, [see below](/doc/passhub-business#passhub-user-management).
+Follow the [installation instructions](https://github.com/wwpass/passhub/blob/master/InstallingPassHubOnUbuntu20.04.md) for Ubuntu servers.
+The PassHub architecture can fit the service on a single host or on three hosts with replicated database and a few web servers. It is possible to bind the PassHub to the company's Active Directory for uniform user rights control. Alternatively, you may use the built-in user control feature of PassHub for Business, [see below](/doc/passhub-business#passhub-user-management).
 
 ## PassHub as a Service
 
-An easier way to get the PassHub instance and control user access to you company data is to subscribe to PassHub as a service. We deploy a PassHub server with a URL yourcompany.passhub.us in the US zone or yourcompany.passhub.us in the EU. To start, you provide an email of the first user who will be assigned an administrator role.
+An easier way to get the PassHub instance and control user access to you company data is to subscribe to PassHub as a service. We deploy a PassHub server with a URL yourcompany.passhub.us in the US, or yourcompany.passhub.us in the EU. To start, you provide the email of the first user who will be assigned an administrator role.
 
 
 ## PassHub user management
@@ -25,8 +25,8 @@ As an administrator, sign in to PassHub. See https://passhub.net/doc/ for detail
 
 Scan the QR code on your PassHub site with WWPass Key. During this first sign-in, you will be asked to confirm the email.
 When your account is created, you are automatically assigned the site administrator role.
-Same as other users you can create your own records, safes, and share them with your colleagues. Again, see documentation pages https://passhub.net/doc/
-In addition, being the site administrator, you can add PassHub users, change their access rights, and revoke or temporarily disable user access.
+Same as other users, you can create your own records, safes, and share them with your colleagues. Being the site administrator, you can also add PassHub users, change their access rights, and revoke or temporarily disable user access.
+
 To get to the user management page, click the "Account" icon in the upper right corner of PassHub page and select "Users" item with the wrench icon.
 
 ![IAM menu item](/img/iam_menu_item1.png)
@@ -35,12 +35,12 @@ On the user management page, you can invite/authorize a new user to create an ac
 
 Use "status" column to control the user status: 
 
-- admin: site administrator
-- disabled: temporarily revoke user access
-- active: just normal user
+- Admin: site administrator
+- Disabled: temporarily revoke user access
+- Active: normal user
 
 
-You can also delete the user account, but this operation is a one-way: the unshared user data will be completely lost. Disasble operation is safe and reversible. 
+You can also delete the user account, but this operation is one-way: any unshared user data will be completely lost. The disable operation is safe and reversible. 
 
 
 ![User Table](/img/user_table.jpg)
@@ -48,15 +48,14 @@ You can also delete the user account, but this operation is a one-way: the unsha
 
 ## User groups
 
-Groups represent a widely used technique to provide access rights to users depending on their department, role, etc. in the organization. PassHub allows site admins to create user groups, add users to the group, and define a list of safes along with access rights to particular safes ("edit" or "view-only").
+Groups represent a widely used technique to provide access rights to users depending on their department, role, etc. in an organization. PassHub allows site admins to create user groups, add users to the group, and define a list of safes along with access rights to particular safes ("edit" or "view-only").
 
-Only site administrators are allowed to access Group management controls. Here is how it is all done:
+Only site administrators are allowed to access Group management controls. Here is how it's done:
 
 ### Step 1. Create a new group
 
 On the "User page", click the "Add Group" button in the "User Groups" pane.
 Select a unique name for the group. 
-Done.
 
 ![Create Group](/img/create_group.jpg)
 
@@ -70,7 +69,7 @@ Click on a group record. Choose "Users" in the group menu.
 
 "Select user to add" shows a list of users you can include in the group. 
 
-NOTE:  invited (authorized) users are not listed if they have not created the PassHub account yet (i.e., are not in an active, admin, etc. state).
+NOTE:  invited (authorized) users are not listed if they have not created a PassHub account yet (i.e., are not in an active, admin, etc. state).
 
 ![Add User Group Members](/img/user_groups_members.jpg)
 
@@ -91,7 +90,7 @@ The "Safes" item of the group menu opens a dialog to control the safe list of th
 ![Group Safes](/img/group_safes_dropdown.jpg)
 
 
-Later on, you can change the access rights or remove the safe from the group list.
+Later on, you can change the access rights or remove a safe from the group list.
 
 ![Group Safes List](/img/group_safes_list.jpg)
 
@@ -117,15 +116,15 @@ When PassHub is connected to the Active Directory, user rights (active, admin, o
 
 There is an almost one-to-one mapping of user rights in standalone PassHub and PassHub AD:
 
-**authorized** - the user is a member of the "PassHub users" group but has not created a PassHub account yet
+**Authorized** - the user is a member of the "PassHub users" group but has not created a PassHub account yet.
 
-**active** - a member of the "PassHub users" group with a PassHub account
+**Active** - a member of the "PassHub users" group with a PassHub account.
 
-**admin** - same as active, plus a member of "PassHub admin"
+**Admin** - same as active, plus a member of "PassHub admin".
 
-**disabled** - The user has a PassHub account but their "PassHub user" group membership was revoked.
+**Disabled** - The user has a PassHub account but their "PassHub user" group membership was revoked.
 
-The parameters of the PassHub connection to the Active directory are defined by a structure in the PassHub config file; see the template below
+The parameters of the PassHub connection to the Active directory are defined by a structure in the PassHub config file; see the template below.
 
 
 ```php
@@ -149,7 +148,7 @@ define(
       'group' => "CN=PassHub Users,OU=AADDC Users,DC=yourcompany,DC=com",
       'admin_group' => "CN=PassHub Admins,OU=AADDC Users,DC=yourcompany,DC=com",
 
-      // cerdentials used by Passhub itself when cheking user membership to the above group
+      // credentials used by Passhub itself when cheking user membership to the above group
       'bind_dn' => "azureldap@yourcompany.com",
       'bind_pwd' => "12345678",
     ]
