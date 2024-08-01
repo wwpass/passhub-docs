@@ -28,7 +28,7 @@ In the Login Entry form, click **Add Google Authenticator** secret to open the T
 
 ![Edit TOTP](/img/EditTotp.png)
 
-Now the TOTP-code will be shown in the Login view, alongside a timer indicating when the code will change:
+Now the TOTP-code will be shown in the Login view, along with time remaining till the code change:
 
 ![TOTP indicator](/img/totp.png)
 
@@ -48,9 +48,12 @@ When finished, click the Upload button.
 
 :::note Upload multiple files
 
-You can upload multiple files at once: just what you need in the **Browse** dialog, or Drag-and-Drop them on desktop.
+It is possible to upload a number of files in one step: using multiple selection feature of the operating system, choose files in the **Browse** dialog or Drag-and-Drop them on the desktop.
 
 :::
+
+<img width="440px" src="img/multiple_file_selection.jpg" alt="multiple file selection" style={{marginRight: "20px"}} /> <img  width="440px" src="img/multiple_file_selection2.jpg" alt="multiple file selection"/>
+
 
 ## New Credit Card
 

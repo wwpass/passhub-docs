@@ -38,5 +38,5 @@ Your Chrome records are now available in PassHub.
 ![Imported passwords](/img/chrome-export5.png)
 
 :::danger Attention:
-Delete the _Chrome Passwords.csv_ file when finished—it contains unencrypted information!
+Delete the _Chrome Passwords.csv_ file when finished — it contains unencrypted information!
 :::

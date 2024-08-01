@@ -22,7 +22,7 @@ To move any password, file, note, card, or folder, use the standard procedure: "
 
 ## Copy and Paste
 
-Click on the record's name to open its dialog and select the **Move** or **Copy** icon.
+Click on the record's title to open its dialog and select the **Move** or **Copy** icon.
 
 ![Copy Move Icons](/img/CopyMoveIcons.png)
 

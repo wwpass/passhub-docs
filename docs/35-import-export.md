@@ -21,7 +21,7 @@ In either dialog, choose one of the two file formats - XML or CSV. For backup/re
 There are many KeePass flavors, particularly:
 
 - KeePass 2 - for Windows
-- KeePass2Android - for Android devices
+- Keepass2Android - for Android devices
 - KeePassXC - cross-platform application for MAC, Linux, and Windows
 
 Windows and Android versions support the XML format as a primary choice; using CSV format on these versions is more error-prone. Cross-platform KeePassXC supports CSV only, and this implementation is correct.

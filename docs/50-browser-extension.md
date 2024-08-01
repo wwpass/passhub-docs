@@ -19,7 +19,7 @@ On a desktop Chrome, Microsoft Edge, Opera, Vivaldi, Brave, and other Chromium-b
 
 Alternatively, go to the [Chrome Web Store](https://chrome.google.com/webstore/category/extensions) and find the PassHub.net extension. Click **Add to Chrome**.
 
-NOTE: In the Chrome browser, you can pin the PassHub extension icon to the toolbar. To do so, click on the puzzle piece-shaped Extensions icon next to the account icon and then click the pushpin next to the PassHub extension.
+NOTE: In the Chrome browser, pin the PassHub extension icon to the toolbar. To do so, click on the puzzle piece-shaped Extensions icon next to the account icon and then click the pushpin next to the PassHub extension.
 
 ![Chrome pin extension](/img/ChromePinExtension.png)
 
