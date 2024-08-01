@@ -52,7 +52,7 @@ It is possible to upload a number of files in one step: using multiple selection
 
 :::
 
-<img width="440px" src="img/multiple_file_selection.jpg" alt="multiple file selection" style={{marginRight: "20px"}} /> <img  width="440px" src="img/multiple_file_selection2.jpg" alt="multiple file selection"/>
+<img width="440px" src="/doc/img/multiple_file_selection.jpg" alt="multiple file selection" style={{marginRight: "20px"}} /> <img  width="440px" src="/doc/img/multiple_file_selection2.jpg" alt="multiple file selection"/>
 
 
 ## New Credit Card
