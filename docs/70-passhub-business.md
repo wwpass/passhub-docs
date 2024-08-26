@@ -7,7 +7,7 @@ sidebar_position: 70
 
 ## Self-Hosted PassHub
 
-PassHub is an open-source project with the code available on GitHub. See https://github.com/wwpass/passhub for the backend and https://github.com/wwpass/passhub-frontend for the frontend.
+PassHub is an open-source project with the code available on GitHub. See https://github.com/wwpass/passhub for the backend and https://github.com/wwpass/passhub-frontend-v2 for the frontend.
 
 You can deploy an instance of PassHub on your company servers, either hardware server, located in a data center or a Virtual Private Server (VPS). This way you have full control of your data.
 
