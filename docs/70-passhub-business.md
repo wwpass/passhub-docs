@@ -108,9 +108,7 @@ The first time a user logs in to PassHub (at the time the user account is create
 
 To identify a user for safe sharing or PassHub safe group membership, PassHub relies on a user mail provided by the AD. In the absence of the user email address, PassHub uses the UPN.
 
-
 Every time a user logs in to PassHub, the user's membership in a specific AD group of "PassHub users" is checked. Another AD group, "PassHub admins," gives its members admin rights for PassHub.
-
 
 When PassHub is connected to the Active Directory, user rights (active, admin, or disabled) are defined by AD group membership. To prevent conflicts, the corresponding elements in the PassHub "User Management Page" are only used to indicate user state, not to control it.
 
@@ -124,11 +122,97 @@ There is an almost one-to-one mapping of user rights in standalone PassHub and P
 
 **Disabled** - The user has a PassHub account but their "PassHub user" group membership was revoked.
 
-The parameters of the PassHub connection to the Active directory are defined by a structure in the PassHub config file; see the template below.
+## Deploying Passhub through Azure
 
+There are 2 methods to do this:
+1. Microsoft Graph API
+2. Lightweight Directory Access Protocol (LDAPs)
+
+We suggest following through with the Graph API as it is easier however both options are available:
+
+## Deploying Passhub with Microsoft API
+
+You can deploy Passhub for Business to Azure through the Microsoft Graph API.
+
+### 1. Register the Application through Azure
+Go to the "App Registrations" service then Click "New Registration"
+![New Registration](/img/new_registration.png)
+Enter a name e.g. "Passhub API", Leave the rest blank, Then "Register"
+![New Registration 2](/img/new_registration_2.png)
+
+### 2. Copy Application IDs
+
+Copy the Application Client ID and Directory Tenant ID and store it for step 7 
+![Copy ID](/img/copy_id.png)
+
+### 3. Authentication Of Users
+
+Click "Manage" on the left, then "Authentication", at the top click the "Add a platform" button. then click "Web": 
+![Add Platform](/img/add_platform.png)  
+
+Make the redirect url <https://yourdomain.com/oauth-callback.php> and change yourdomain.com to your companies Passhub for Business website,
+then select Access tokens And ID Tokens,
+Finally click configure.
+![Redirect URL](/img/redirect_url.png)
+
+Scroll down to "Advanced Settings" then select Yes on the "Allow public client flows" and click save
+![Authentication Save](/img/authentication_save.png)
+
+### 4. Client Secret
+Under "Manage" go to "Certificates and Secrets", from there click on the "Client Secrets" tab, this is where you can create a "New client secret"
+
+Give it a name such as "PasshubForBusiness", we suggest setting the expiration date for a year for more permanent passhub inistallations.
+
+Once you are done click "Add", and finally copy the "Value" for the client secret and store it for later use in step 7
+![Client Secret](/img/client_secret.png)
+
+### 5. Enable API Permissions
+Under "Manage" go to "API permissions", from here we want to remove default the "User.Read" permission.
+Now click "add a permission" then click "Microsoft graph"
+![Graph Permissions](/img/graph_permissions.png)
+Choose "delegated permissions" and we will need 2 specifics ones: "GroupMember.Read.All" and "User.ReadBasic.All" and finally at the bottom click "add permissions"
+
+**Note:** Repeat this step again for application permissions
+![Add Permissions](/img/add_permissions.png)
+
+Now click on "Grant admin consent for yourdomain.com". 
+![Admin Consent](/img/admin_consent.png)
+
+### 6. Change Configuration
+In the Config.php file under the "AZURE" definition please put in the ids from step 2 and the Client Secret from step 4 into the config file. Also put in the names of your User and Admin Groups aswell.
+Here is the template below of the Config file for using Microsoft Graph:
 
 ```php
+define(
+    'AZURE', [
 
+    // App Registration ID's
+    'application_client_id' => "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+    'directory_tenant_id' => "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+
+    // App Registration Client Secret
+    'client_value' => "XXXXX~XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+
+    // Name of Groups in Entra ID
+    'user_group' => "PasshubUsers",
+    'admin_group' => "PasshubAdmins",
+    ]
+);
+```
+
+## Deploying PassHub with LDAPS
+
+You can deploy PassHub for Business to Azure and connect it with Azure Active Directory via LDAP. 
+
+1. Create an Azure subscription and Active Directory tenant. Azure Active Directory Domain Services managed domain should be enabled and configured. The following Microsoft tutorial guides through the details of Azure Active Directory Domain Services configuration: [https://learn.microsoft.com/en-us/azure/active-directory-domain-services/tutorial-create-instance](https://learn.microsoft.com/en-us/azure/active-directory-domain-services/tutorial-create-instance)
+
+2. Configure LDAP for an Azure Active Directory Domain Services managed domain. Please follow this Microsoft tutorial to complete the LDAP setup: [https://learn.microsoft.com/en-us/azure/active-directory-domain-services/](https://learn.microsoft.com/en-us/azure/active-directory-domain-services/tutorial-configure-ldaps)
+
+3. Once the LDAP server is up and running, follow the above paragraph [#connect-passhub-to-active-directory-ldap-azure](#connect-passhub-to-active-directory-ldap-azure) to deploy PassHub for Business and perform PassHub configuration.
+
+The parameters of the PassHub connection to Active Directory through LDAP is defined in the PassHub config file; (passhub/config/config.php), see the template below.
+
+```php
 define(
     'LDAP', [
       // Active directory server schema, name and port
@@ -145,26 +229,12 @@ define(
       'domain' => "yourcompany.com",
 
       // Group names, which allows to access PassHub and provides admin rights
-      'group' => "CN=PassHub Users,OU=AADDC Users,DC=yourcompany,DC=com",
-      'admin_group' => "CN=PassHub Admins,OU=AADDC Users,DC=yourcompany,DC=com",
+      'group' => "CN=PassHubUsers,OU=AADDCUsers,DC=yourcompany,DC=com",
+      'admin_group' => "CN=PassHubAdmins,OU=AADDCUsers,DC=yourcompany,DC=com",
 
       // credentials used by Passhub itself when cheking user membership to the above group
       'bind_dn' => "azureldap@yourcompany.com",
       'bind_pwd' => "12345678",
     ]
 );
-
 ```
-
-
-## Deploying PassHub to Azure
-
-You can deploy PassHub for Business to Azure and connect it with Azure Active Directory via LDAP. 
-
-1. Create an Azure subscription and Active Directory tenant. Azure Active Directory Domain Services managed domain should be enabled and configured. The following Microsoft tutorial guides through the details of Azure Active Directory Domain Services configuration: [https://learn.microsoft.com/en-us/azure/active-directory-domain-services/tutorial-create-instance](https://learn.microsoft.com/en-us/azure/active-directory-domain-services/tutorial-create-instance)
-
-2. Configure LDAP for an Azure Active Directory Domain Services managed domain. Please follow this Microsoft tutorial to complete the LDAP setup: [https://learn.microsoft.com/en-us/azure/active-directory-domain-services/](https://learn.microsoft.com/en-us/azure/active-directory-domain-services/tutorial-configure-ldaps)
-
-3. Once the LDAP server is up and running, follow the above paragraph [#connect-passhub-to-active-directory-ldap-azure](#connect-passhub-to-active-directory-ldap-azure) to deploy PassHub for Business and perform PassHub configuration.
-
-
