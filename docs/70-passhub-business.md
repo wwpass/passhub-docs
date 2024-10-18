@@ -11,36 +11,36 @@ PassHub is an open-source project with the code available on GitHub. See https:/
 
 You can deploy an instance of PassHub on your company servers, either hardware server, located in a data center or a Virtual Private Server (VPS). This way you have full control of your data.
 
-Follow the [installation instructions](https://github.com/wwpass/passhub/blob/master/InstallingPassHubOnUbuntu20.04.md) for Ubuntu servers.
-The PassHub architecture can fit the service on a single host or on three hosts with replicated database and a few web servers. It is possible to bind the PassHub to the company's Active Directory for uniform user rights control. Alternatively, you may use the built-in user control feature of PassHub for Business, [see below](/doc/passhub-business#passhub-user-management).
+Follow the [installation instructions](https://github.com/wwpass/passhub/blob/master/InstallingPassHubOnLinux.md) for Ubuntu servers.
+The PassHub architecture can fit the service on a single host or on three hosts with a replicated database and a few web servers. It is possible to bind the PassHub to the company's Active Directory for uniform user rights control. Alternatively, you may use the built-in user control feature of PassHub for Business, [see below](/doc/passhub-business#passhub-user-management).
 
 ## PassHub as a Service
 
-An easier way to get the PassHub instance and control user access to you company data is to subscribe to PassHub as a service. We deploy a PassHub server with a URL yourcompany.passhub.us in the US, or yourcompany.passhub.us in the EU. To start, you provide the email of the first user who will be assigned an administrator role.
+An easier way to get the PassHub instance and control user access to you company data is to subscribe to PassHub as a service. We deploy a PassHub server with a URL yourcompany.passhub.us in the US, or yourcompany.passhub.us in the EU. To start, please provide the email of the first user who will be assigned an administrator role.
 
 
 ## PassHub user management
 
 As an administrator, sign in to PassHub. See https://passhub.net/doc/ for details.
 
-Scan the QR code on your PassHub site with WWPass Key. During this first sign-in, you will be asked to confirm the email.
+Scan the QR code on your PassHub site with WWPass Key. During this first sign-in, you will be asked to confirm your    email.
 When your account is created, you are automatically assigned the site administrator role.
-Same as other users, you can create your own records, safes, and share them with your colleagues. Being the site administrator, you can also add PassHub users, change their access rights, and revoke or temporarily disable user access.
+Same as other users, you can create your own records, safes, and share them with your colleagues. Being a site administrator, you can also add PassHub users, change their access rights, and revoke or temporarily disable user access.
 
-To get to the user management page, click the "Account" icon in the upper right corner of PassHub page and select "Users" item with the wrench icon.
+To get to the user management page, click the "Account" icon in the upper right corner of PassHub page and select the "Users" item with the wrench icon.
 
 ![IAM menu item](/img/iam_menu_item1.png)
 
 On the user management page, you can invite/authorize a new user to create an account with their email address. 
 
-Use "status" column to control the user status: 
+Use the "status" column to control the user status: 
 
-- Admin: site administrator
-- Disabled: temporarily revoke user access
-- Active: normal user
+- Admin: Site administrator
+- Disabled: Temporarily revoke user access
+- Active: Normal user
 
 
-You can also delete the user account, but this operation is one-way: any unshared user data will be completely lost. The disable operation is safe and reversible. 
+You can also delete user accounts, but this is a one-way operation: any unshared user data will be completely lost. The disable operation is safe and reversible. 
 
 
 ![User Table](/img/user_table.jpg)
@@ -48,7 +48,7 @@ You can also delete the user account, but this operation is one-way: any unshare
 
 ## User groups
 
-Groups represent a widely used technique to provide access rights to users depending on their department, role, etc. in an organization. PassHub allows site admins to create user groups, add users to the group, and define a list of safes along with access rights to particular safes ("edit" or "view-only").
+Groups represent a widely used technique to provide access rights to users depending on their department, role, etc. in an organization. PassHub allows site admins to create user groups, add users to groups, and define a list of safes along with access rights to particular safes ("edit" or "view-only").
 
 Only site administrators are allowed to access Group management controls. Here is how it's done:
 
@@ -62,14 +62,14 @@ Select a unique name for the group.
 
 ### Step 2. Add users to the group
 
-Click on a group record. Choose "Users" in the group menu.
+Click on a group record and choose "Users" in the group menu.
 
 
 ![User Group Menu](/img/user_groups_menu.jpg)  
 
 "Select user to add" shows a list of users you can include in the group. 
 
-NOTE:  invited (authorized) users are not listed if they have not created a PassHub account yet (i.e., are not in an active, admin, etc. state).
+**Note:**  invited (authorized) users are not listed if they have not created a PassHub account yet (i.e., are not in an active, admin, etc. state).
 
 ![Add User Group Members](/img/user_groups_members.jpg)
 
@@ -84,7 +84,7 @@ Use the red cross icon to the left of the user email to remove a particular user
 ### Step 3. Add safes to the group
 
 
-The "Safes" item of the group menu opens a dialog to control the safe list of the group. As a site admin, you can only add safes that you created or for which you have "owner" rights. For each safe, you can set group access rights: "Can Edit", "Can view", or "Limited view".
+The "Safes" item of the group menu opens a dialog to control the safe list of the group. As a site admin, you can only add safes that you created or for which you have "owner" rights to. For each safe, you can set group access rights: "Can Edit", "Can view", or "Limited view".
 
 
 ![Group Safes](/img/group_safes_dropdown.jpg)
@@ -104,13 +104,13 @@ You can view and control group membership of a particular user by clicking the u
 
 PassHub for Business can sync its users to a company Active Directory (AD).
 
-The first time a user logs in to PassHub (at the time the user account is created), the user provides their AD credentials (the user principal name (UPN) and a password). The credentials are checked by AD, and the user account is bound to the AD records.
+The first time a user logs in to PassHub (at the time a user account is created), the user provides their AD credentials (the user principal name (UPN) and a password). These credentials are checked by AD, and the user account is bound to the AD records.
 
 To identify a user for safe sharing or PassHub safe group membership, PassHub relies on a user mail provided by the AD. In the absence of the user email address, PassHub uses the UPN.
 
 Every time a user logs in to PassHub, the user's membership in a specific AD group of "PassHub users" is checked. Another AD group, "PassHub admins," gives its members admin rights for PassHub.
 
-When PassHub is connected to the Active Directory, user rights (active, admin, or disabled) are defined by AD group membership. To prevent conflicts, the corresponding elements in the PassHub "User Management Page" are only used to indicate user state, not to control it.
+When PassHub is connected to Active Directory, user rights (active, admin, or disabled) are defined by AD group membership. To prevent conflicts, the corresponding elements in the PassHub "User Management Page" are only used to indicate user state, not to control it.
 
 There is an almost one-to-one mapping of user rights in standalone PassHub and PassHub AD:
 
@@ -126,6 +126,21 @@ There is an almost one-to-one mapping of user rights in standalone PassHub and P
 
 There are 2 methods to do this:
 1. Microsoft Graph API
+
+2. Lightweight Directory Access Protocol (LDAPS for Azure)
+
+We suggest following through with the Graph API as it is easier however both options are available:
+
+### Creating Groups
+You must create 2 groups for Passhub, a User Group and an Admin Group, If you know how to do this you can skip this step.
+
+Go to "Entra ID", then under "Manage" go to "Groups", finally click "New Group", put in a name e.g. "PasshubUsers" and
+leave the rest default, finally click create.
+
+Repeat this step for the Admin group as well.
+
+**Note:** Save the names of both groups for the config file.
+
 2. Lightweight Directory Access Protocol (LDAPs)
 
 We suggest following through with the Graph API as it is easier however both options are available:
@@ -142,7 +157,7 @@ Enter a name e.g. "Passhub API", Leave the rest blank, Then "Register"
 
 ### 2. Copy Application IDs
 
-Copy the Application Client ID and Directory Tenant ID and store it for step 7 
+Copy the Application Client ID and Directory Tenant ID and store it for Step 7 
 ![Copy ID](/img/copy_id.png)
 
 ### 3. Authentication Of Users
@@ -151,7 +166,7 @@ Click "Manage" on the left, then "Authentication", at the top click the "Add a p
 ![Add Platform](/img/add_platform.png)  
 
 Make the redirect url <https://yourdomain.com/oauth-callback.php> and change yourdomain.com to your companies Passhub for Business website,
-then select Access tokens And ID Tokens,
+then select "Access tokens" And "ID Tokens",
 Finally click configure.
 ![Redirect URL](/img/redirect_url.png)
 
@@ -159,20 +174,20 @@ Scroll down to "Advanced Settings" then select Yes on the "Allow public client f
 ![Authentication Save](/img/authentication_save.png)
 
 ### 4. Client Secret
-Under "Manage" go to "Certificates and Secrets", from there click on the "Client Secrets" tab, this is where you can create a "New client secret"
+Under "Manage" go to "Certificates and Secrets", from there click on the "Client Secrets" tab, this is where you can create a "New client secret".
 
-Give it a name such as "PasshubForBusiness", we suggest setting the expiration date for a year for more permanent passhub inistallations.
+Give it a name such as "PasshubForBusiness", we suggest setting the expiration date for a year for more permanent passhub installations.
 
-Once you are done click "Add", and finally copy the "Value" for the client secret and store it for later use in step 7
+Once you are done click "Add", and finally copy the "Value" for the client secret and store it for later use in Step 7
 ![Client Secret](/img/client_secret.png)
 
 ### 5. Enable API Permissions
-Under "Manage" go to "API permissions", from here we want to remove default the "User.Read" permission.
-Now click "add a permission" then click "Microsoft graph"
+Under "Manage" go to "API permissions", from here we want to remove the default "User.Read" permission.
+Now click "Add a permission" then click "Microsoft Graph"
 ![Graph Permissions](/img/graph_permissions.png)
-Choose "delegated permissions" and we will need 2 specifics ones: "GroupMember.Read.All" and "User.ReadBasic.All" and finally at the bottom click "add permissions"
+Choose "Delegated permissions" and we will need 2 specifics ones: "GroupMember.Read.All" and "User.ReadBasic.All" and finally at the bottom click "Add permissions"
 
-**Note:** Repeat this step again for application permissions
+**Note:** Repeat this step again for Application permissions
 ![Add Permissions](/img/add_permissions.png)
 
 Now click on "Grant admin consent for yourdomain.com". 
@@ -200,7 +215,7 @@ define(
 );
 ```
 
-## Deploying PassHub with LDAPS
+## Deploying PassHub with LDAP
 
 You can deploy PassHub for Business to Azure and connect it with Azure Active Directory via LDAP. 
 
