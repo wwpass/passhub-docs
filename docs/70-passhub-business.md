@@ -170,9 +170,6 @@ then select "Access tokens" And "ID Tokens",
 Finally click configure.
 ![Redirect URL](/img/redirect_url.png)
 
-Scroll down to "Advanced Settings" then select Yes on the "Allow public client flows" and click save
-![Authentication Save](/img/authentication_save.png)
-
 ### 4. Client Secret
 Under "Manage" go to "Certificates and Secrets", from there click on the "Client Secrets" tab, this is where you can create a "New client secret".
 
