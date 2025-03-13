@@ -10,7 +10,7 @@ If you would like to run a self hosted Passhub For Business that runs inside of 
 You have 2 options:
 
 1. Follow along this documentation while you deploy Passhub For Business using Azure Marketplace 
-2. Follow this link to a video that follows the documentation
+2. Find [WWPass on Youtube](https://www.youtube.com/@WorldWidePass) to a video that follows this Document
 
 ## Azure Marketplace
 
