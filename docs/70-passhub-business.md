@@ -122,7 +122,7 @@ There is an almost one-to-one mapping of user rights in standalone PassHub and P
 
 **Disabled** - The user has a PassHub account but their "PassHub user" group membership was revoked.
 
-## Deploying Passhub through Azure
+## Passhub User Management
 
 There are 2 methods to do this:
 1. Microsoft Graph API
@@ -145,7 +145,7 @@ Repeat this step for the Admin group as well.
 
 We suggest following through with the Graph API as it is easier however both options are available:
 
-## Deploying Passhub with Microsoft API
+## Passhub User Management with Azure
 
 You can deploy Passhub for Business to Azure through the Microsoft Graph API.
 
@@ -170,7 +170,7 @@ then select "Access tokens" And "ID Tokens",
 Finally click configure.
 ![Redirect URL](/img/redirect_url.png)
 
-Scroll down to "Advanced Settings" then select Yes on the "Allow public client flows" and click save
+Scroll down to "Advanced Settings" then select Yes on the "Allow public client flows" and click save 
 ![Authentication Save](/img/authentication_save.png)
 
 ### 4. Client Secret
